@@ -1,9 +1,9 @@
 # EEG-python
 
 ## 功能說明
-- 從原始腦波數據 Excel 檔案中拆解每一欄的資料為獨立的每秒紀錄。
-- 整合所有欄位為統一格式，輸出為新的 Excel 檔案。
-- 輸出 Excel 檔示意圖在 `output excel preview.png`
+- `EEG_second.py` 從原始腦波數據 Excel 檔案中拆解每一欄的資料為獨立的每秒紀錄。整合所有欄位為統一格式，輸出為新的 Excel 檔案。
+- `EEG_case.py` 是
+- code 對應輸出 Excel 檔示意圖在 `EGG_second output excel preview.png` 跟 `EGG_case output excel preview.png`
 
 ## 使用方式
 1. 安裝必要的 Python 套件（第一次執行才需要）：
@@ -12,7 +12,7 @@
    pip install pandas openpyxl numpy
    ```
 
-2. 複製 `EEG.py` 中的程式碼後執行。
+2. 複製 `EEG_second.py` 或是 `EEG_case.py` 中的程式碼後執行。
 
 ## 注意事項
 - 你需要有一個可以執行 Python 的開發環境（IDE），例如 [Visual Studio Code](https://code.visualstudio.com/)、PyCharm 或 Jupyter Notebook。  
