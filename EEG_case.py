@@ -46,6 +46,7 @@ for _, row in df.iterrows():
         for col in data_columns
     }
 
+     # 這裡是只取前六段區段，逐段儲存到 results 中，可以改成你要的段落
     for i, segment in enumerate(segments[:6]):
         indices = [time_list.index(t) for t in segment if t in time_list]
 
