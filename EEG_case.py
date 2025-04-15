@@ -18,7 +18,7 @@ def find_continuous_segments(time_list, min_len=20):
     return segments
 
 # 讀取 Excel 並強制所有欄位為字串
-df = pd.read_excel("腦波數據.xlsx", dtype=str)
+df = pd.read_excel("腦波數據.xlsx", dtype=str)# 記得改成自己的檔名
 
 data_columns = [
     'Attention/注意力', 'Relaxation/放松度', 'Delta/δ波', 'Theta/θ波',
@@ -36,7 +36,7 @@ for _, row in df.iterrows():
 
     segments = find_continuous_segments(time_list, min_len=20)
 
-    if len(segments) < 6:
+    if len(segments) < 6: # 可以改成你要切的數目資料
         print("⚠️ 無法切出六段有效影片資料！")
         continue
 
@@ -49,7 +49,7 @@ for _, row in df.iterrows():
     for i, segment in enumerate(segments[:6]):
         indices = [time_list.index(t) for t in segment if t in time_list]
 
-        row_result = {'影片': i + 1}
+        row_result = {'影片': i + 1} # 可以改成你要欄位名稱
         for col in data_columns:
             values = [parsed_data[col][j] for j in indices if j < len(parsed_data[col])]
             row_result[col] = ",".join(values)
@@ -57,5 +57,5 @@ for _, row in df.iterrows():
 
 # 輸出結果（數值以純字串方式儲存）
 result_df = pd.DataFrame(results)
-result_df.to_excel("影片分段結果.xlsx", index=False)
-print("✅ 數據已完整保留並成功輸出（不會變成 000，也不會截斷大數字）")
+result_df.to_excel("分段結果.xlsx", index=False)
+print("輸出成功✅")
