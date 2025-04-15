@@ -2,7 +2,7 @@
 
 ## 功能說明
 - `EEG_second.py` 從原始腦波數據 Excel 檔案中拆解每一欄的資料為獨立的每秒紀錄。整合所有欄位為統一格式，輸出為新的 Excel 檔案。
-- `EEG_case.py` 是
+- `EEG_case.py` 是根據時間序列切出連續且有效的 n 段影片數據，並將對應的腦波指標資料提取出來並儲存成新的 Excel。
 - code 對應輸出 Excel 檔示意圖在 `EGG_second output excel preview.png` 跟 `EGG_case output excel preview.png`
 
 ## 使用方式
