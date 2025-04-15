@@ -36,7 +36,8 @@ for _, row in df.iterrows():
 
     segments = find_continuous_segments(time_list, min_len=20)
 
-    if len(segments) < 6: # 可以改成你要切的數目資料
+    # 若找不到足夠的連續區段（至少6段），跳過此筆資料
+    if len(segments) < 6:
         print("⚠️ 無法切出六段有效影片資料！")
         continue
 
@@ -46,7 +47,7 @@ for _, row in df.iterrows():
         for col in data_columns
     }
 
-     # 這裡是只取前六段區段，逐段儲存到 results 中，可以改成你要的段落
+     # 只取前六段區段，逐段儲存到 results 中
     for i, segment in enumerate(segments[:6]):
         indices = [time_list.index(t) for t in segment if t in time_list]
 
