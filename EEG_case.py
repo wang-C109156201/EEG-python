@@ -1,5 +1,6 @@
 import pandas as pd
 
+# 根據時間欄位中的整數序列，找出相鄰時間差距不超過 2 且連續長度 ≥ 20 的段落。
 def find_continuous_segments(time_list, min_len=20):
     segments = []
     current_segment = [time_list[0]]
