@@ -1,6 +1,7 @@
 import pandas as pd
 
-# 根據時間欄位中的整數序列，找出相鄰時間差距不超過 2 且連續長度 ≥ 20 的段落。
+# 定義函式：根據時間欄位中的整數序列，找出相鄰時間差距不超過 2 且連續長度 ≥ min_len(20) 的段落。
+# 這裡是做資料清洗，檢查一段資料是否有連續至少達20秒以上的穩定數據，如果沒有就會把資料刪除
 def find_continuous_segments(time_list, min_len=20):
     segments = []
     current_segment = [time_list[0]]
